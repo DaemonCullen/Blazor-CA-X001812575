@@ -1,0 +1,100 @@
+﻿@page "/countries"
+@inject HttpClient Http
+@using CA3_X00182575.Data
+
+<PageTitle>Countries of the World</PageTitle>
+
+<h3>Countries of the World</h3>
+
+@if (countries == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    // Sorting
+    <div class="mb-3">
+        <label for="sortSelect" class="form-label">Sort by:</label>
+        <select id="sortSelect" class="form-select w-auto" @onchange="SortCountries">
+            <option value="name">Name</option>
+            <option value="population">Population</option>
+            <option value="populationDensity">Population Density</option>
+            <option value="area">Area</option>
+        </select>
+    </div>
+    // Search
+    // List
+    <div class="list-group">
+        @foreach (var c in countries)
+        {
+            <div class="list-group-item d-flex align-items-center mb-2">
+                <img src="@c.flags.png" alt="Flag" style="width: 80px; height: auto; margin-right: 1rem;" />
+                <div class="d-flex w-100">
+                    <div class="flex-grow-1">
+                        <h5>
+                            <a href="@OpenGoogleMaps(c)" target="_blank" title="Open in Google Maps">@c.name.common</a>
+                        </h5>
+                        <p class="mb-0">Capital: <b>@(c.capital?.FirstOrDefault() ?? "None")</b></p>
+                        <p class="mb-0">Region: <b>@c.region</b></p>
+                    </div>
+                    <div class="flex-grow-1 text-end">
+                        <p class="mb-0">Population: <b>@c.population.ToString("N0")</b></p>
+                        <p class="mb-0">Pop. Density: <b>@((c.population / c.area).ToString("N0"))</b></p>
+                        <p class="mb-0">Area: <b>@c.area.ToString("N0") km²</b></p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+
+@code {
+    List<Country>? countries;
+    string currentSort = "name";
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            countries = await Http.GetFromJsonAsync<List<Country>>(
+                "https://restcountries.com/v3.1/all?fields=name,capital,region,population,area,flags,latlng");
+            SortBy(currentSort);
+        }
+        catch
+        {
+            countries = new List<Country>();
+        }
+    }
+
+    private void SortCountries(ChangeEventArgs e)
+    {
+        currentSort = e.Value?.ToString() ?? "name";
+        SortBy(currentSort);
+    }
+
+    private void SortBy(string sortField)
+    {
+        if (countries == null) return;
+
+        countries = sortField switch
+        {
+            "population" => countries.OrderByDescending(c => c.population).ToList(),
+            "populationDensity" => countries.OrderByDescending(c => (c.population / c.area)).ToList(),
+            "area" => countries.OrderByDescending(c => c.area).ToList(),
+            _ => countries.OrderBy(c => c.name.common).ToList()
+        };
+    }
+
+    // Open Google Maps
+    private string OpenGoogleMaps(Country c)
+    {
+        if (c.latlong != null && c.latlong.Count == 2)
+        {
+            return $"https://www.google.com/maps/search/?api=1&query={c.latlong[0]},{c.latlong[1]}";
+        }
+        else
+        {
+            return $"https://www.google.com/maps/search/?api=1&query={Uri.EscapeDataString(c.name.common)}";
+        }
+    }
+}

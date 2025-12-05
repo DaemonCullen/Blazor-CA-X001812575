@@ -101,3 +101,11 @@ a, .btn-link {
 code {
     color: #c02d76;
 }
+
+.nav-link .bi {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+    line-height: 1;
+}

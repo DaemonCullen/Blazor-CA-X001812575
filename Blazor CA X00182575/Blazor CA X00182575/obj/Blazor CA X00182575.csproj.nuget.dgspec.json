@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Daemon\\Desktop\\Blazor CA X00182575\\Blazor CA X00182575\\Blazor CA X00182575\\Blazor CA X00182575.csproj": {}
+    "C:\\Users\\Daemon\\Desktop\\Blazor CA X00182575\\Blazor-CA-X001812575\\Blazor CA X00182575\\Blazor CA X00182575\\Blazor CA X00182575.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Daemon\\Desktop\\Blazor CA X00182575\\Blazor CA X00182575\\Blazor CA X00182575\\Blazor CA X00182575.csproj": {
+    "C:\\Users\\Daemon\\Desktop\\Blazor CA X00182575\\Blazor-CA-X001812575\\Blazor CA X00182575\\Blazor CA X00182575\\Blazor CA X00182575.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Daemon\\Desktop\\Blazor CA X00182575\\Blazor CA X00182575\\Blazor CA X00182575\\Blazor CA X00182575.csproj",
+        "projectUniqueName": "C:\\Users\\Daemon\\Desktop\\Blazor CA X00182575\\Blazor-CA-X001812575\\Blazor CA X00182575\\Blazor CA X00182575\\Blazor CA X00182575.csproj",
         "projectName": "Blazor CA X00182575",
-        "projectPath": "C:\\Users\\Daemon\\Desktop\\Blazor CA X00182575\\Blazor CA X00182575\\Blazor CA X00182575\\Blazor CA X00182575.csproj",
+        "projectPath": "C:\\Users\\Daemon\\Desktop\\Blazor CA X00182575\\Blazor-CA-X001812575\\Blazor CA X00182575\\Blazor CA X00182575\\Blazor CA X00182575.csproj",
         "packagesPath": "C:\\Users\\Daemon\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Daemon\\Desktop\\Blazor CA X00182575\\Blazor CA X00182575\\Blazor CA X00182575\\obj\\",
+        "outputPath": "C:\\Users\\Daemon\\Desktop\\Blazor CA X00182575\\Blazor-CA-X001812575\\Blazor CA X00182575\\Blazor CA X00182575\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

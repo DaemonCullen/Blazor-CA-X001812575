@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "L5q/NUGknIQ=",
+  "dgSpecHash": "qh6i06xw/io=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Daemon\\Desktop\\Blazor CA X00182575\\Blazor CA X00182575\\Blazor CA X00182575\\Blazor CA X00182575.csproj",
+  "projectFilePath": "C:\\Users\\Daemon\\Desktop\\Blazor CA X00182575\\Blazor-CA-X001812575\\Blazor CA X00182575\\Blazor CA X00182575\\Blazor CA X00182575.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Daemon\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.21\\microsoft.aspnetcore.authorization.8.0.21.nupkg.sha512",
     "C:\\Users\\Daemon\\.nuget\\packages\\microsoft.aspnetcore.components\\8.0.21\\microsoft.aspnetcore.components.8.0.21.nupkg.sha512",
