@@ -102,10 +102,63 @@ code {
     color: #c02d76;
 }
 
+/* --- Nabvar --- */
+
 .nav-link .bi {
     display: inline-flex;
     align-items: center;
     margin-right: 0.5rem;
     font-size: 1.2rem;
     line-height: 1;
+}
+
+/* --- Charts --- */
+
+.chart-section {
+    background-color: #e8e8e8;
+    border-radius: 10px;
+    box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.25);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.chart-desc {
+    flex: 0 0 250px;
+    max-width: 250px;
+}
+
+.chart-container {
+    flex: 1 1 400px;
+    min-width: 300px;
+}
+
+    .chart-container canvas {
+        max-width: 100% !important;
+    }
+
+/* --- Home Page --- */
+
+.side {
+    width: 40%;
+    background-color: transparent;
+}
+
+.intro {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+}
+
+.home-flag {
+    height: auto;
+    width: 75%;
+}
+
+.title-centre {
+    text-align: center;
 }

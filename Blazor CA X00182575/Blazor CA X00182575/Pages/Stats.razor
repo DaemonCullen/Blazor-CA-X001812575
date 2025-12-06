@@ -1,0 +1,132 @@
+﻿@page "/stats"
+@inject HttpClient Http
+@using CA3_X00182575.Data
+@using BlazorBootstrap
+
+<h3>Top 10 Countries - Population & Area</h3>
+
+<div class="chart-section">
+    <div class="chart-desc">
+        <h4>Population</h4>
+        <p>
+            Although a graph on population may not be the most exciting statistics of all time,
+            I put it here as the first stat as it still does show us some interesting stuff.
+        </p>
+    </div>
+    <div class="chart-container">
+        <BarChart @ref="populationChart" />
+    </div>
+</div>
+
+<div class="chart-section">
+    <div class="chart-container">
+        <BarChart @ref="areaChart" />
+    </div>
+    <div class="chart-desc">
+        <h4>Area</h4>
+        <p>
+            Although a graph on population may not be the most exciting statistics of all time,
+            I put it here as the first stat as it still does show us some interesting stuff.
+        </p>
+    </div>
+</div>
+
+@code {
+    private BarChart populationChart = default!;
+    private BarChart areaChart = default!;
+
+    private List<Country> countries = new();
+    private List<Country> top10ByPopulation = new();
+    private List<Country> top10ByDensity = new();
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await LoadDataAsync();
+            await RenderPopulationChartAsync();
+            await RenderAreaChartAsync();
+        }
+
+        await base.OnAfterRenderAsync(firstRender);
+    }
+
+    private async Task LoadDataAsync()
+    {
+        try
+        {
+            countries = await Http.GetFromJsonAsync<List<Country>>(
+                "https://restcountries.com/v3.1/all?fields=name,capital,region,population,area,flags,latlng");
+
+            top10ByPopulation = countries
+                .OrderByDescending(c => c.population)
+                .Take(10)
+                .ToList();
+
+            top10ByDensity = countries
+                .OrderByDescending(c => c.population / c.area)
+                .Take(10)
+                .ToList();
+        }
+        catch
+        {
+            // If I need it
+        }
+    }
+
+    private async Task RenderPopulationChartAsync()
+    {
+        var data = new ChartData
+        {
+            Labels = top10ByPopulation.Select(c => c.name.common).ToList(),
+            Datasets = new List<IChartDataset>
+            {
+                new BarChartDataset
+                {
+                    Label = "Population",
+                    Data = top10ByPopulation.Select(c => (double?)c.population).ToList(),
+                    BackgroundColor = top10ByPopulation.Select(_ => "rgb(54, 162, 235)").ToList(),
+                    CategoryPercentage = 0.8,
+                    BarPercentage = 1
+                }
+            }
+        };
+
+        var options = new BarChartOptions { Responsive = true };
+        options.Plugins.Title!.Text = "Top 10 Countries by Population";
+        options.Plugins.Title.Display = true;
+        options.Plugins.Title.Font = new ChartFont { Size = 20 };
+        options.Scales.X!.Title = new ChartAxesTitle { Text = "Country", Display = true };
+        options.Scales.Y!.Title = new ChartAxesTitle { Text = "Population", Display = true };
+
+        await populationChart.InitializeAsync(data, options);
+    }
+
+    private async Task RenderAreaChartAsync()
+    {
+        var data = new ChartData
+        {
+            Labels = top10ByDensity.Select(c => c.name.common).ToList(),
+            Datasets = new List<IChartDataset>
+            {
+                new BarChartDataset
+                {
+                    Label = "Population Density",
+                    Data = top10ByDensity.Select(c => (double?)(c.population / c.area)).ToList(),
+                    BackgroundColor = top10ByDensity.Select(_ => "rgb(255, 99, 132)").ToList(),
+                    CategoryPercentage = 0.8,
+                    BarPercentage = 1
+                }
+            }
+        };
+
+        var options = new BarChartOptions { Responsive = true };
+        options.Plugins.Title!.Text = "Top 10 Countries by Population Density";
+        options.Plugins.Title.Display = true;
+        options.Plugins.Title.Font = new ChartFont { Size = 20 };
+        options.Scales.X!.Title = new ChartAxesTitle { Text = "Country", Display = true };
+        options.Scales.Y!.Title = new ChartAxesTitle { Text = "Population Density", Display = true };
+
+        await areaChart.InitializeAsync(data, options);
+    }
+}

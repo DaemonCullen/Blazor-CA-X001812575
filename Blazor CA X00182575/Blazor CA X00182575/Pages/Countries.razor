@@ -88,9 +88,9 @@ else
     // Open Google Maps
     private string OpenGoogleMaps(Country c)
     {
-        if (c.latlong != null && c.latlong.Count == 2)
+        if (c.latlng != null && c.latlng.Count == 2)
         {
-            return $"https://www.google.com/maps/search/?api=1&query={c.latlong[0]},{c.latlong[1]}";
+            return $"https://www.google.com/maps/search/?api=1&query={c.latlng[0]},{c.latlng[1]}";
         }
         else
         {

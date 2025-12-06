@@ -8,7 +8,7 @@
         public long population { get; set; }
         public double area { get; set; }
         public Flags flags { get; set; }
-        public List<double> latlong { get; set; }
+        public List<double> latlng { get; set; }
     }
 
     public class Name
