@@ -28,9 +28,11 @@ jobs:
 
       - name: Restore .NET tools
         run: dotnet tool restore
+        working-directory: BlazorCA.PlaywrightTests
 
       - name: Install Playwright browsers
         run: dotnet tool run playwright install
+        working-directory: BlazorCA.PlaywrightTests
 
       - name: Run tests
         run: dotnet test BlazorCA.PlaywrightTests/BlazorCA.PlaywrightTests.csproj --no-build
