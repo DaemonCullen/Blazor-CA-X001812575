@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Daemon\\Desktop\\Blazor CA X00182575\\Blazor-CA-X001812575\\Blazor CA X00182575\\Blazor CA X00182575\\Blazor CA X00182575.csproj": {}
+    "C:\\Users\\daemo\\Desktop\\Blaze\\Blazor-CA-X001812575\\Blazor CA X00182575\\Blazor CA X00182575\\Blazor CA X00182575.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Daemon\\Desktop\\Blazor CA X00182575\\Blazor-CA-X001812575\\Blazor CA X00182575\\Blazor CA X00182575\\Blazor CA X00182575.csproj": {
+    "C:\\Users\\daemo\\Desktop\\Blaze\\Blazor-CA-X001812575\\Blazor CA X00182575\\Blazor CA X00182575\\Blazor CA X00182575.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Daemon\\Desktop\\Blazor CA X00182575\\Blazor-CA-X001812575\\Blazor CA X00182575\\Blazor CA X00182575\\Blazor CA X00182575.csproj",
+        "projectUniqueName": "C:\\Users\\daemo\\Desktop\\Blaze\\Blazor-CA-X001812575\\Blazor CA X00182575\\Blazor CA X00182575\\Blazor CA X00182575.csproj",
         "projectName": "Blazor CA X00182575",
-        "projectPath": "C:\\Users\\Daemon\\Desktop\\Blazor CA X00182575\\Blazor-CA-X001812575\\Blazor CA X00182575\\Blazor CA X00182575\\Blazor CA X00182575.csproj",
-        "packagesPath": "C:\\Users\\Daemon\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Daemon\\Desktop\\Blazor CA X00182575\\Blazor-CA-X001812575\\Blazor CA X00182575\\Blazor CA X00182575\\obj\\",
+        "projectPath": "C:\\Users\\daemo\\Desktop\\Blaze\\Blazor-CA-X001812575\\Blazor CA X00182575\\Blazor CA X00182575\\Blazor CA X00182575.csproj",
+        "packagesPath": "C:\\Users\\daemo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\daemo\\Desktop\\Blaze\\Blazor-CA-X001812575\\Blazor CA X00182575\\Blazor CA X00182575\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Daemon\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\daemo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -44,8 +39,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.300"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -67,13 +61,13 @@
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.21, )",
+              "version": "[8.0.3, )",
               "autoReferenced": true
             },
             "Microsoft.NET.Sdk.WebAssembly.Pack": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.10, )",
+              "version": "[8.0.3, )",
               "autoReferenced": true
             }
           },
@@ -91,7 +85,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
-              "version": "[8.0.21, 8.0.21]"
+              "version": "[8.0.3, 8.0.3]"
             }
           ],
           "frameworkReferences": {
@@ -99,7 +93,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
