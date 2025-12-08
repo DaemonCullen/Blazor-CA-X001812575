@@ -1,0 +1,77 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\daemo\\Desktop\\Blaze\\Blazor-CA-X001812575\\Blazor CA X00182575\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "C:\\Users\\daemo\\Desktop\\Blaze\\Blazor-CA-X001812575\\Blazor CA X00182575\\obj\\Debug\\net8.0\\compressed\\54j6buvvn2.gz",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "C:\\Users\\daemo\\Desktop\\Blaze\\Blazor-CA-X001812575\\Blazor CA X00182575\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Blazor CA X00182575.styles.css",
+      "PackagePath": "staticwebassets\\Blazor CA X00182575.styles.css"
+    },
+    {
+      "Id": "C:\\Users\\daemo\\Desktop\\Blaze\\Blazor-CA-X001812575\\Blazor CA X00182575\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\daemo\\Desktop\\Blaze\\Blazor-CA-X001812575\\Blazor CA X00182575\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\daemo\\Desktop\\Blaze\\Blazor-CA-X001812575\\Blazor CA X00182575\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\daemo\\Desktop\\Blaze\\Blazor-CA-X001812575\\Blazor CA X00182575\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\daemo\\Desktop\\Blaze\\Blazor-CA-X001812575\\Blazor CA X00182575\\wwwroot\\icon-192.png",
+      "PackagePath": "staticwebassets\\icon-192.png"
+    },
+    {
+      "Id": "C:\\Users\\daemo\\Desktop\\Blaze\\Blazor-CA-X001812575\\Blazor CA X00182575\\wwwroot\\images\\Flag_of_Canada-1024x512.png",
+      "PackagePath": "staticwebassets\\images\\Flag_of_Canada-1024x512.png"
+    },
+    {
+      "Id": "C:\\Users\\daemo\\Desktop\\Blaze\\Blazor-CA-X001812575\\Blazor CA X00182575\\wwwroot\\images\\Flag_of_Ireland-1024x512.png",
+      "PackagePath": "staticwebassets\\images\\Flag_of_Ireland-1024x512.png"
+    },
+    {
+      "Id": "C:\\Users\\daemo\\Desktop\\Blaze\\Blazor-CA-X001812575\\Blazor CA X00182575\\wwwroot\\images\\Flag_of_Palestine-1024x512.png",
+      "PackagePath": "staticwebassets\\images\\Flag_of_Palestine-1024x512.png"
+    },
+    {
+      "Id": "C:\\Users\\daemo\\Desktop\\Blaze\\Blazor-CA-X001812575\\Blazor CA X00182575\\wwwroot\\images\\Flag_of_United_Kingdom-1024x512.png",
+      "PackagePath": "staticwebassets\\images\\Flag_of_United_Kingdom-1024x512.png"
+    },
+    {
+      "Id": "C:\\Users\\daemo\\Desktop\\Blaze\\Blazor-CA-X001812575\\Blazor CA X00182575\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\daemo\\Desktop\\Blaze\\Blazor-CA-X001812575\\Blazor CA X00182575\\wwwroot\\sample-data\\weather.json",
+      "PackagePath": "staticwebassets\\sample-data\\weather.json"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Blazor CA X00182575.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Blazor CA X00182575.props",
+      "PackagePath": "build\\Blazor CA X00182575.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Blazor CA X00182575.props",
+      "PackagePath": "buildMultiTargeting\\Blazor CA X00182575.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Blazor CA X00182575.props",
+      "PackagePath": "buildTransitive\\Blazor CA X00182575.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
