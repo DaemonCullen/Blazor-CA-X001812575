@@ -24,14 +24,18 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore
 
-      # 4 Build the project
+      # 4 Build project
       - name: Build project
         run: dotnet build --no-restore
 
-      # 5 Install Playwright browsers
+      # 5 Restore .NET tools
+      - name: Restore .NET tools
+        run: dotnet tool restore
+
+      # 6 Install browsers
       - name: Install Playwright browsers
         run: dotnet tool run playwright install
 
-      # 6 Run tests
+      # 7 Run tests
       - name: Run tests
         run: dotnet test BlazorCA.PlaywrightTests/BlazorCA.PlaywrightTests.csproj --no-build
