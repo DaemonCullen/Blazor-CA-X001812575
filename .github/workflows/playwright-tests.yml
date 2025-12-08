@@ -1,41 +1,33 @@
-name: Playwright Tests
-
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-
 jobs:
   test:
     runs-on: ubuntu-latest
 
     steps:
-      # 1 Checkout code
+      # 1. Checkout code
       - uses: actions/checkout@v3
 
-      # 2 Setup .NET SDK
+      # 2. Setup .NET SDK
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: "9.0.x"
 
-      # 3 Restore NuGet packages
+      # 3. Restore NuGet packages
       - name: Restore dependencies
         run: dotnet restore
 
-      # 4 Build project
+      # 4. Build the project
       - name: Build project
         run: dotnet build --no-restore
 
-      # 5 Restore .NET tools
+      # 5. Restore .NET tools
       - name: Restore .NET tools
         run: dotnet tool restore
 
-      # 6 Install browsers
+      # 6. Install Playwright browsers
       - name: Install Playwright browsers
         run: dotnet tool run playwright install
 
-      # 7 Run tests
+      # 7. Run tests
       - name: Run tests
         run: dotnet test BlazorCA.PlaywrightTests/BlazorCA.PlaywrightTests.csproj --no-build
