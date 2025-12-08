@@ -1,3 +1,5 @@
+name: Playwright Tests
+
 jobs:
   test:
     runs-on: ubuntu-latest
