@@ -3,7 +3,7 @@
 @using CA3_X00182575.Data
 @using BlazorBootstrap
 
-<h3>Statistics</h3>
+<h3 class="page-title">Statistics</h3>
 
 <div class="chart-section">
     <div class="chart-desc">
@@ -101,10 +101,13 @@
 
         var options = new BarChartOptions { Responsive = true };
         options.Plugins.Title!.Text = "Top 10 Countries by Population";
+        options.Plugins.Title.Color = "#FFFFFF";
         options.Plugins.Title.Display = true;
         options.Plugins.Title.Font = new ChartFont { Size = 20 };
-        options.Scales.X!.Title = new ChartAxesTitle { Text = "Country", Display = true };
-        options.Scales.Y!.Title = new ChartAxesTitle { Text = "Population", Display = true };
+
+        options.Scales.X!.Title = new ChartAxesTitle { Text = "Country", Color = "#FFFFFF", Display = false };
+        options.Scales.Y!.Title = new ChartAxesTitle { Text = "Population", Color = "#FFFFFF", Display = false };
+
 
         await populationChart.InitializeAsync(data, options);
     }
@@ -129,10 +132,12 @@
 
         var options = new BarChartOptions { Responsive = true };
         options.Plugins.Title!.Text = "Top 10 Countries by Population Density";
+        options.Plugins.Title.Color = "#FFFFFF";
         options.Plugins.Title.Display = true;
         options.Plugins.Title.Font = new ChartFont { Size = 20 };
-        options.Scales.X!.Title = new ChartAxesTitle { Text = "Country", Display = true };
-        options.Scales.Y!.Title = new ChartAxesTitle { Text = "Population Density", Display = true };
+
+        options.Scales.X!.Title = new ChartAxesTitle { Text = "Country", Display = false };
+        options.Scales.Y!.Title = new ChartAxesTitle { Text = "Population Density", Display = false };
 
         await areaChart.InitializeAsync(data, options);
     }

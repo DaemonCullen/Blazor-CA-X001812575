@@ -1,5 +1,8 @@
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #1E1E1E;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 h1:focus {
@@ -8,6 +11,20 @@ h1:focus {
 
 a, .btn-link {
     color: #0071c1;
+}
+
+.main {
+    background-color: #1E1E1E !important;
+    margin: 0;
+    padding: 0;
+}
+
+.top-row {
+    background-color: #1E1E1E !important;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border: none;
+    box-shadow: 5px 5px 25px 0px rgba(0,0,0,0.15);
 }
 
 .btn-primary {
@@ -22,6 +39,7 @@ a, .btn-link {
 
 .content {
     padding-top: 1.1rem;
+    background-color: #1E1E1E !important;
 }
 
 .valid.modified:not([type=checkbox]) {
@@ -102,6 +120,30 @@ code {
     color: #c02d76;
 }
 
+.page-title {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 700;
+}
+
+.form-select {
+    background-color: #212529;
+    color: grey;
+}
+
+.form-control {
+    background-color: #212529;
+    color: grey;
+}
+
+.list-group {
+    color: white;
+}
+
+.list-group-item {
+    background-color: #212529;
+    color: white;
+}
+
 /* --- Nabvar --- */
 
 .nav-link .bi {
@@ -115,7 +157,7 @@ code {
 /* --- Charts --- */
 
 .chart-section {
-    background-color: #e8e8e8;
+    background-color: #212529;
     border-radius: 10px;
     box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.25);
     display: flex;
@@ -129,6 +171,7 @@ code {
 .chart-desc {
     flex: 0 0 250px;
     max-width: 250px;
+    font-size: 18px;
 }
 
 .chart-container {
@@ -163,6 +206,7 @@ code {
     margin: 0 auto;
     text-align: center;
     padding: 20px;
+    font-size: 18px
 }
 
 .home-flag {
