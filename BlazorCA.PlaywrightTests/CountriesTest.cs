@@ -18,7 +18,7 @@ public class CountriesTests : IAsyncLifetime
         {
             FileName = "dotnet",
             Arguments = "run --urls http://localhost:5188",
-            WorkingDirectory = @"..\..\..\..\Blazor CA X00182575",
+            WorkingDirectory = @"../../../../Blazor CA X00182575",
             RedirectStandardOutput = true,
             RedirectStandardError = true,
             UseShellExecute = false,
