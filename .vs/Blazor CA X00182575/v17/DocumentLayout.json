@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\daemo\\Desktop\\Blaze\\Blazor-CA-X001812575\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daemo\\AppData\\Local\\Temp\\.vsdbgsrc\\44aa595dc2a1078aa662bebf92f46ec0aa83d37961bfc5ec1f12f1b995219153\\AddressBinder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C4F2F1BC-9B7F-4FC7-8E93-C7C7B66FDEF9}|BlazorCA.PlaywrightTests\\BlazorCA.PlaywrightTests.csproj|c:\\users\\daemo\\desktop\\blaze\\blazor-ca-x001812575\\blazorca.playwrighttests\\countriestest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C4F2F1BC-9B7F-4FC7-8E93-C7C7B66FDEF9}|BlazorCA.PlaywrightTests\\BlazorCA.PlaywrightTests.csproj|solutionrelative:blazorca.playwrighttests\\countriestest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\daemo\\AppData\\Local\\Temp\\.vsdbgsrc\\44aa595dc2a1078aa662bebf92f46ec0aa83d37961bfc5ec1f12f1b995219153\\AddressBinder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{59410367-B9ED-4C77-B52F-92652899B632}|Blazor CA X00182575\\Blazor CA X00182575.csproj|c:\\users\\daemo\\desktop\\blaze\\blazor-ca-x001812575\\blazor ca x00182575\\pages\\countries.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -49,32 +49,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "AddressBinder.cs",
               "DocumentMoniker": "C:\\Users\\daemo\\AppData\\Local\\Temp\\.vsdbgsrc\\44aa595dc2a1078aa662bebf92f46ec0aa83d37961bfc5ec1f12f1b995219153\\AddressBinder.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\44aa595dc2a1078aa662bebf92f46ec0aa83d37961bfc5ec1f12f1b995219153\\AddressBinder.cs",
               "ToolTip": "C:\\Users\\daemo\\AppData\\Local\\Temp\\.vsdbgsrc\\44aa595dc2a1078aa662bebf92f46ec0aa83d37961bfc5ec1f12f1b995219153\\AddressBinder.cs",
               "RelativeToolTip": "..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\44aa595dc2a1078aa662bebf92f46ec0aa83d37961bfc5ec1f12f1b995219153\\AddressBinder.cs",
-              "ViewState": "AQIAAJwAAAAAAAAAAAAkwKUAAAAAAAAA",
+              "ViewState": "AQIAAJwAAAAAAAAAAAAkwKwAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-08T17:10:49.575Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "CountriesTest.cs",
               "DocumentMoniker": "C:\\Users\\daemo\\Desktop\\Blaze\\Blazor-CA-X001812575\\BlazorCA.PlaywrightTests\\CountriesTest.cs",
               "RelativeDocumentMoniker": "BlazorCA.PlaywrightTests\\CountriesTest.cs",
               "ToolTip": "C:\\Users\\daemo\\Desktop\\Blaze\\Blazor-CA-X001812575\\BlazorCA.PlaywrightTests\\CountriesTest.cs",
               "RelativeToolTip": "BlazorCA.PlaywrightTests\\CountriesTest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAfAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T17:02:46.786Z"
+              "WhenOpened": "2025-12-08T17:02:46.786Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
