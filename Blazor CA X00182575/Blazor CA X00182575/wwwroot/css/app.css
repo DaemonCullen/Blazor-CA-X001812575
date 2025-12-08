@@ -142,9 +142,20 @@ code {
 
 /* --- Home Page --- */
 
+.container-row {
+    display: flex;
+    align-items: center; /* vertical centering of intro & sides */
+    width: 100%;
+    height: 100%;
+}
+
 .side {
     width: 40%;
     background-color: transparent;
+    display: flex; /* make the side container a flex container */
+    flex-direction: column; /* stack flags vertically */
+    justify-content: center; /* vertical centering of flags in the container */
+    align-items: center; /* horizontal centering of flags */
 }
 
 .intro {
@@ -157,8 +168,13 @@ code {
 .home-flag {
     height: auto;
     width: 75%;
+    margin: 10px 0; /* optional: spacing between stacked flags */
 }
 
 .title-centre {
+    text-align: center;
+}
+
+.subTitle-centre {
     text-align: center;
 }

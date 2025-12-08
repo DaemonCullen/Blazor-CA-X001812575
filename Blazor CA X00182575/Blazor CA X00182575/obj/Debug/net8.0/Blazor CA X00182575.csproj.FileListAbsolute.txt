@@ -2077,6 +2077,6 @@ C:\Users\Daemon\Desktop\Blazor CA X00182575\Blazor-CA-X001812575\Blazor CA X0018
 C:\Users\Daemon\Desktop\Blazor CA X00182575\Blazor-CA-X001812575\Blazor CA X00182575\Blazor CA X00182575\bin\Debug\net8.0\BlazorBootstrap.dll
 C:\Users\Daemon\Desktop\Blazor CA X00182575\Blazor-CA-X001812575\Blazor CA X00182575\Blazor CA X00182575\obj\Debug\net8.0\webcil\BlazorBootstrap.wasm
 C:\Users\Daemon\Desktop\Blazor CA X00182575\Blazor-CA-X001812575\Blazor CA X00182575\Blazor CA X00182575\obj\Debug\net8.0\compressed\zn5g6yvm79-1ifrmeeh3k.gz
-C:\Users\Daemon\Desktop\Blazor CA X00182575\Blazor-CA-X001812575\Blazor CA X00182575\Blazor CA X00182575\obj\Debug\net8.0\compressed\aytpl9l46l-c961bkso0t.gz
-C:\Users\Daemon\Desktop\Blazor CA X00182575\Blazor-CA-X001812575\Blazor CA X00182575\Blazor CA X00182575\obj\Debug\net8.0\compressed\wvj8q9nxbb-akyotu593u.gz
-C:\Users\Daemon\Desktop\Blazor CA X00182575\Blazor-CA-X001812575\Blazor CA X00182575\Blazor CA X00182575\obj\Debug\net8.0\compressed\8lgurlctna-h17lr5fbda.gz
+C:\Users\Daemon\Desktop\Blazor CA X00182575\Blazor-CA-X001812575\Blazor CA X00182575\Blazor CA X00182575\obj\Debug\net8.0\compressed\aytpl9l46l-k46y17krrv.gz
+C:\Users\Daemon\Desktop\Blazor CA X00182575\Blazor-CA-X001812575\Blazor CA X00182575\Blazor CA X00182575\obj\Debug\net8.0\compressed\wvj8q9nxbb-7p5g25ee2i.gz
+C:\Users\Daemon\Desktop\Blazor CA X00182575\Blazor-CA-X001812575\Blazor CA X00182575\Blazor CA X00182575\obj\Debug\net8.0\compressed\8lgurlctna-19tl4qbi89.gz

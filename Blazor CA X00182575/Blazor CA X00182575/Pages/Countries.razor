@@ -23,27 +23,41 @@ else
         </select>
     </div>
     // Search
+    <div class="mb-3">
+        <label class="form-label">Search country:</label>
+        <input class="form-control w-50"
+               placeholder="Type a country name..."
+               value="@searchText"
+               @oninput="OnSearchInput" />
+    </div>
     // List
     <div class="list-group">
-        @foreach (var c in countries)
+        @if (filteredCountries == null || filteredCountries.Count == 0)
         {
-            <div class="list-group-item d-flex align-items-center mb-2">
-                <img src="@c.flags.png" alt="Flag" style="width: 80px; height: auto; margin-right: 1rem;" />
-                <div class="d-flex w-100">
-                    <div class="flex-grow-1">
-                        <h5>
-                            <a href="@OpenGoogleMaps(c)" target="_blank" title="Open in Google Maps">@c.name.common</a>
-                        </h5>
-                        <p class="mb-0">Capital: <b>@(c.capital?.FirstOrDefault() ?? "None")</b></p>
-                        <p class="mb-0">Region: <b>@c.region</b></p>
-                    </div>
-                    <div class="flex-grow-1 text-end">
-                        <p class="mb-0">Population: <b>@c.population.ToString("N0")</b></p>
-                        <p class="mb-0">Pop. Density: <b>@((c.population / c.area).ToString("N0"))</b></p>
-                        <p class="mb-0">Area: <b>@c.area.ToString("N0") km²</b></p>
+            <div class="list-group-item">No countries match your search.</div>
+        }
+        else
+        {
+            @foreach (var c in filteredCountries)
+            {
+                <div class="list-group-item d-flex align-items-center mb-2">
+                    <img src="@c.flags?.png" alt="Flag" style="width: 80px; height: auto; margin-right: 1rem;" />
+                    <div class="d-flex w-100">
+                        <div class="flex-grow-1">
+                            <h5>
+                                <a href="@OpenGoogleMaps(c)" target="_blank" title="Open in Google Maps">@c.name?.common</a>
+                            </h5>
+                            <p class="mb-0">Capital: <b>@(c.capital?.FirstOrDefault() ?? "None")</b></p>
+                            <p class="mb-0">Region: <b>@c.region</b></p>
+                        </div>
+                        <div class="flex-grow-1 text-end">
+                            <p class="mb-0">Population: <b>@c.population.ToString("N0")</b></p>
+                            <p class="mb-0">Pop. Density: <b>@((c.population / c.area).ToString("N0"))</b></p>
+                            <p class="mb-0">Area: <b>@c.area.ToString("N0") km²</b></p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            }
         }
     </div>
 }
@@ -52,6 +66,9 @@ else
     List<Country>? countries;
     string currentSort = "name";
 
+    List<Country>? filteredCountries;
+    string searchText = "";
+
     protected override async Task OnInitializedAsync()
     {
         try
@@ -59,6 +76,7 @@ else
             countries = await Http.GetFromJsonAsync<List<Country>>(
                 "https://restcountries.com/v3.1/all?fields=name,capital,region,population,area,flags,latlng");
             SortBy(currentSort);
+            Search();
         }
         catch
         {
@@ -70,6 +88,7 @@ else
     {
         currentSort = e.Value?.ToString() ?? "name";
         SortBy(currentSort);
+        Search();
     }
 
     private void SortBy(string sortField)
@@ -96,5 +115,41 @@ else
         {
             return $"https://www.google.com/maps/search/?api=1&query={Uri.EscapeDataString(c.name.common)}";
         }
+    }
+
+    private void Search()
+    {
+        if (countries == null)
+        {
+            filteredCountries = new List<Country>();
+            return;
+        }
+
+        var countrySearch = countries;
+
+        countrySearch = currentSort switch
+        {
+            "population" => countrySearch.OrderByDescending(c => c.population).ToList(),
+            "populationDensity" => countrySearch.OrderByDescending(c => (c.population / c.area)).ToList(),
+            "area" => countrySearch.OrderByDescending(c => c.area).ToList(),
+            _ => countrySearch.OrderBy(c => c.name.common).ToList()
+        };
+
+        if (string.IsNullOrWhiteSpace(searchText))
+        {
+            filteredCountries = countrySearch.ToList();
+        }
+        else
+        {
+            filteredCountries = countrySearch
+                .Where(c => c.name.common.Contains(searchText, StringComparison.OrdinalIgnoreCase))
+                .ToList();
+        }
+    }
+
+    private void OnSearchInput(ChangeEventArgs e)
+    {
+        searchText = e.Value?.ToString() ?? "";
+        Search();
     }
 }

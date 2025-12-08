@@ -3,7 +3,7 @@
 @using CA3_X00182575.Data
 @using BlazorBootstrap
 
-<h3>Top 10 Countries - Population & Area</h3>
+<h3>Statistics</h3>
 
 <div class="chart-section">
     <div class="chart-desc">
@@ -11,6 +11,10 @@
         <p>
             Although a graph on population may not be the most exciting statistics of all time,
             I put it here as the first stat as it still does show us some interesting stuff.
+            Mainly you can see the clear massive jump from the United States (340,110,988) to Chinas (1,404,280,000).
+            Not only is this a huge jump in populaton but China isn't even the country with the highest population.
+            That title goes to India with a staggering (1,417,492,000) and it is also an Asian country.
+            This shows us clearly that most of the world is located in Asia.
         </p>
     </div>
     <div class="chart-container">
@@ -23,10 +27,13 @@
         <BarChart @ref="areaChart" />
     </div>
     <div class="chart-desc">
-        <h4>Area</h4>
+        <h4>Population Density</h4>
         <p>
-            Although a graph on population may not be the most exciting statistics of all time,
-            I put it here as the first stat as it still does show us some interesting stuff.
+            Again population density may not be the most intresting statistic but it still shows a lot.
+            From the top 5 you can see that three of the five are also in Asia which shows just how many
+            people are in Asia even though it may not be that big.
+            Looking at the full top ten you can see that nine of them are spread across Eurasia where only 
+            one is located in North America.
         </p>
     </div>
 </div>

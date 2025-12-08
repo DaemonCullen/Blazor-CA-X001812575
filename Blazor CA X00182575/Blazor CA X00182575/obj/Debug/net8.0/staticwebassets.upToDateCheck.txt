@@ -2,6 +2,10 @@ wwwroot\css\bootstrap\bootstrap.min.css
 wwwroot\css\bootstrap\bootstrap.min.css.map
 wwwroot\favicon.png
 wwwroot\icon-192.png
+wwwroot\images\Flag_of_Canada-1024x512.png
+wwwroot\images\Flag_of_Ireland-1024x512.png
+wwwroot\images\Flag_of_Palestine-1024x512.png
+wwwroot\images\Flag_of_United_Kingdom-1024x512.png
+wwwroot\index.html
 wwwroot\sample-data\weather.json
 wwwroot\css\app.css
-wwwroot\index.html
