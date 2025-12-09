@@ -11,6 +11,7 @@ public class CountriesTests : IAsyncLifetime
     private Process _blazorApp;
 
     private const string Url = "http://localhost:5188/countries";
+    private const string statsUrl = "http://localhost:5188/stats";
 
     public async Task InitializeAsync()
     {
@@ -63,18 +64,18 @@ public class CountriesTests : IAsyncLifetime
         throw new Exception("Blazor server did not start in time.");
     }
 
-    [Fact]
-    public async Task CountriesPage_ShouldDisplayCountries()
+    [Fact] // Checks list of countries
+	public async Task CountriesPage_ShouldDisplayCountries()
     {
         var page = await _context.NewPageAsync();
         await page.GotoAsync(Url);
         await page.WaitForSelectorAsync(".list-group-item.d-flex");
         var count = await page.Locator(".list-group-item").CountAsync();
-        Assert.True(count > 0);
+        Assert.True(count > 0, $"No countries displayed");
     }
 
-    [Fact]
-    public async Task Search_ShouldFilterCountries()
+    [Fact] // Checks search bar
+	public async Task Search_ShouldFilterCountries()
     {
         var page = await _context.NewPageAsync();
         await page.GotoAsync(Url);
@@ -83,4 +84,81 @@ public class CountriesTests : IAsyncLifetime
         var text = await page.Locator(".list-group-item h5 a").First.InnerTextAsync();
         Assert.Contains("Ireland", text, StringComparison.OrdinalIgnoreCase);
     }
+
+	[Fact] // Checks charts
+	public async Task StatsPage_ShouldDisplayCharts()
+	{
+		var page = await _context.NewPageAsync();
+		await page.GotoAsync(statsUrl);
+
+		await page.WaitForSelectorAsync(".chart-container canvas",
+			new() { State = WaitForSelectorState.Attached });
+
+		var canvases = page.Locator(".chart-container canvas");
+		int count = await canvases.CountAsync();
+
+		Assert.True(count == 2, "Charts missing");
+
+		await Assertions.Expect(canvases.First).ToBeVisibleAsync();
+	}
+
+	[Fact] // Checks Sorting
+	public async Task Sort_ShouldSortCountries()
+	{
+		var page = await _context.NewPageAsync();
+		await page.GotoAsync(Url);
+
+		await page.WaitForSelectorAsync(".list-group-item h5 a");
+
+		var sort = page.Locator("#sortSelect");
+
+		// Sort by name
+		await sort.SelectOptionAsync("name");
+		await page.WaitForTimeoutAsync(300);
+
+		var firstCountry = await page.Locator(".list-group-item h5 a").First.InnerTextAsync();
+		var secondCountry = await page.Locator(".list-group-item h5 a").Nth(1).InnerTextAsync();
+
+		Assert.True(
+			string.Compare(firstCountry, secondCountry, StringComparison.OrdinalIgnoreCase) < 0,
+			$"Name sort wrong. Got {firstCountry} before {secondCountry}"
+		);
+
+		// Sort by poplulation
+		await sort.SelectOptionAsync("population");
+		await page.WaitForTimeoutAsync(300);
+
+		var firstCountryPop = await page.Locator(".list-group-item .text-end p:nth-child(1) b").First.InnerTextAsync();
+		var secondCountryPop = await page.Locator(".list-group-item .text-end p:nth-child(1) b").Nth(1).InnerTextAsync();
+
+		long firstPop = long.Parse(firstCountryPop.Replace(",", ""));
+		long secondPop = long.Parse(secondCountryPop.Replace(",", ""));
+
+		Assert.True(firstPop >= secondPop,
+			$"Population sort wrong. {firstPop} should be morethan {secondPop}");
+	}
+
+	[Fact]
+	public async Task ClickingCountry_ShouldOpenGoogleMaps()
+	{
+		var page = await _context.NewPageAsync();
+		await page.GotoAsync(Url);
+
+		await page.WaitForSelectorAsync(".list-group-item h5 a");
+		var mapPage = page.Context.WaitForPageAsync();
+		await page.Locator(".list-group-item h5 a").First.ClickAsync();
+
+		var newPage = await mapPage;
+		await newPage.WaitForLoadStateAsync(LoadState.DOMContentLoaded);
+
+		var mapURL = newPage.Url;
+
+		Assert.True(
+			mapURL.StartsWith("https://www.google.com/maps") ||
+			mapURL.StartsWith("https://consent.google.com"),
+			$"Google maps didn't open but this did: {mapURL}"
+		);
+	}
+
+
 }
