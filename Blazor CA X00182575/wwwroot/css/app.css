@@ -3,6 +3,8 @@ html, body {
     background-color: #1E1E1E;
     color: white;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    flex-direction: column;
 }
 
 h1:focus {
@@ -17,6 +19,9 @@ a, .btn-link {
     background-color: #1E1E1E !important;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .top-row {
@@ -25,6 +30,7 @@ a, .btn-link {
     padding-bottom: 0;
     border: none;
     box-shadow: 5px 5px 25px 0px rgba(0,0,0,0.15);
+    height: 10%;
 }
 
 .btn-primary {
@@ -40,6 +46,7 @@ a, .btn-link {
 .content {
     padding-top: 1.1rem;
     background-color: #1E1E1E !important;
+    height: 90%
 }
 
 .valid.modified:not([type=checkbox]) {
@@ -185,20 +192,27 @@ code {
 
 /* --- Home Page --- */
 
+.home-page {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .container-row {
     display: flex;
-    align-items: center; /* vertical centering of intro & sides */
+    align-items: center;
     width: 100%;
-    height: 100%;
 }
 
 .side {
     width: 40%;
     background-color: transparent;
-    display: flex; /* make the side container a flex container */
-    flex-direction: column; /* stack flags vertically */
-    justify-content: center; /* vertical centering of flags in the container */
-    align-items: center; /* horizontal centering of flags */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .intro {
@@ -212,7 +226,7 @@ code {
 .home-flag {
     height: auto;
     width: 75%;
-    margin: 10px 0; /* optional: spacing between stacked flags */
+    margin: 10px 0;
 }
 
 .title-centre {
