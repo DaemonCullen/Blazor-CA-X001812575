@@ -107,14 +107,7 @@ else
     // Open Google Maps
     private string OpenGoogleMaps(Country c)
     {
-        if (c.latlng != null && c.latlng.Count == 2)
-        {
-            return $"https://www.google.com/maps/search/?api=1&query={c.latlng[0]},{c.latlng[1]}";
-        }
-        else
-        {
-            return $"https://www.google.com/maps/search/?api=1&query={Uri.EscapeDataString(c.name.common)}";
-        }
+        return $"https://www.google.com/maps/search/?api=1&query={Uri.EscapeDataString(c.name.common)}";
     }
 
     private void Search()

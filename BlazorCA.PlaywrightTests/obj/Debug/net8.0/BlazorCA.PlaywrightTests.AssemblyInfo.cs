@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BlazorCA.PlaywrightTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f684f6bf49b7993a400a8f67f47333ec94549e78")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+11366318cba5eb022a36a738cdf52d12e937c783")]
 [assembly: System.Reflection.AssemblyProductAttribute("BlazorCA.PlaywrightTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BlazorCA.PlaywrightTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
