@@ -138,6 +138,8 @@ public class CountriesTests : IAsyncLifetime
 			$"Population sort wrong. {firstPop} should be morethan {secondPop}");
 	}
 
+    // Check google maps
+
 	[Fact]
 	public async Task ClickingCountry_ShouldOpenGoogleMaps()
 	{
